@@ -7,7 +7,7 @@ gracefully migrate to a new platform with my library intact.
 Use cases important to me:
 
 - **[DONE]** Load an exported iTunes library XML file.
-- Convert library to a more compact, easier-to-load format (pickle, most likely).
+- **[DONE]** Convert library to a more compact, easier-to-load format (pickle, most likely).
 - Copy star ratings from iTunes library (stored as library-level metadata) to ID3v2.
   POPM tags (stored per-file).
 - **[DONE]** Export existing iTunes playlists to a standard format.
