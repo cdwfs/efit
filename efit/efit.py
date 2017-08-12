@@ -1,4 +1,4 @@
-import pyItunes
+import libpytunes
 import ntpath   # Assume paths in the Library are Windows-style
 import os.path
 import pickle
@@ -13,7 +13,7 @@ def load_library_from_file(filename):
     """Loads an iTunes library from either an XML file (exported from iTunes) or a pickled .pkl file."""
     base, ext = os.path.splitext(filename)
     if ext == ".xml":
-        lib = pyItunes.Library(filename)
+        lib = libpytunes.Library(filename)
         if not os.path.exists(base + ".pkl"):
             print("Converting XML library to PKL...")
             save_library_as_pkl(lib, base + ".pkl")

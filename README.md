@@ -21,5 +21,5 @@ Use cases important to me:
 
 Dependencies:
 
-- [pyItunes](https://github.com/liamks/pyitunes) -- iTunes XML library loading and manipulation
+- [libpytunes](https://github.com/liamks/libpytunes) -- iTunes XML library loading and manipulation
 - [eyeD3](http://freecode.com/projects/eyed3) -- ID3 tag manipulation
