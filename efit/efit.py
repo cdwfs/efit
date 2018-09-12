@@ -1,4 +1,5 @@
 import bz2
+import datetime
 import libpytunes
 import ntpath   # Assume paths in the Library are Windows-style
 import os.path
@@ -89,6 +90,7 @@ def export_playlist(lib, list_name, out_filename):
     if ext.lower() == '.m3u8':
         out_file = open(out_filename, "w", encoding="utf-8")
         out_file.write("#EXTM3U\n")
+        out_file.write("# Written by efit on %s\n" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         file_num = 0
         for song in playlist.tracks:
             if not is_valid_song(song):
