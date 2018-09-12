@@ -45,7 +45,7 @@ def is_valid_song(song):
     return (True
             and song.location != None
             and song.genre not in ['Podcast', 'Voice Memo']
-            and ntpath.splitext(song.location)[1].lower() not in ['.m4p', '.m4r']
+            #and ntpath.splitext(song.location)[1].lower() not in ['.m4p', '.m4r']
             and "video" not in song.kind.lower()
             and ntpath.isabs(song.location) # many podcasts are only identifiable by their relative path in the Library
     )
