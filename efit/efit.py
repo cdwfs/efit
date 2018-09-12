@@ -1,3 +1,4 @@
+import bz2
 import libpytunes
 import ntpath   # Assume paths in the Library are Windows-style
 import os.path
@@ -14,11 +15,9 @@ def load_library_from_file(filename):
     base, ext = os.path.splitext(filename)
     if ext == ".xml":
         lib = libpytunes.Library(filename)
-        if not os.path.exists(base + ".pkl"):
-            print("Converting XML library to PKL...")
-            save_library_as_pkl(lib, base + ".pkl")
-            print("...done. Use %s.pkl for faster load times!" % base)
-        return lib
+    elif ext == ".bz2":
+        with bz2.open(filename) as fbz2:
+          lib = libpytunes.Library(fbz2)
     elif ext == ".pkl":
         lib_file = open(filename, "rb")
         lib = pickle.load(lib_file)
@@ -26,7 +25,13 @@ def load_library_from_file(filename):
         return lib
     else:
         raise Exception("Can not load libraries of type " + ext)
-    return None
+
+    if ext != ".pkl" and not os.path.exists(base + ".pkl"):
+        print("Converting XML library to PKL...")
+        save_library_as_pkl(lib, base + ".pkl")
+        print("...done. Use %s.pkl for faster load times!" % base)
+
+    return lib
 
 def save_library_as_pkl(library, filename):
     """Saves a library as a pickled .pkl file. PKL files are about 10x faster to load than XML."""
