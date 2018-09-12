@@ -4,6 +4,7 @@ import libpytunes
 import ntpath   # Assume paths in the Library are Windows-style
 import os.path
 import pickle
+import re
 
 # List of absolute paths to directories where music are stored on the local system.
 # If a song's can't be found at song.location, these directories will be searched
@@ -78,7 +79,7 @@ the directory(s) passed in the "roots" list. If it still can't be found anywhere
     # Give up!
     return None
 
-def export_playlist(lib, list_name, out_filename):
+def export_playlist(lib, list_name, out_filename, replace_this = None, with_this = None):
     """Exports a pre-existing playlist from the library in the standard .m3u8 format."""
     playlists = lib.getPlaylistNames()
     if list_name not in playlists:
@@ -101,5 +102,7 @@ def export_playlist(lib, list_name, out_filename):
                 print("Skipping %s: no such file" % song.location)
                 continue
             file_num += 1
+            if replace_this and with_this:
+                song_path = re.sub(replace_this, with_this, song_path, count=1, flags=re.IGNORECASE)
             out_file.write("%s\n" % song_path)
         out_file.close()
