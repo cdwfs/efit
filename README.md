@@ -22,4 +22,4 @@ Use cases important to me:
 Dependencies:
 
 - [libpytunes](https://github.com/liamks/libpytunes) -- iTunes XML library loading and manipulation
-- [eyeD3](http://freecode.com/projects/eyed3) -- ID3 tag manipulation
+- [mutagen](https://github.com/quodlibet/mutagen) -- ID3 tag manipulation
