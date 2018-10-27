@@ -88,7 +88,7 @@ def export_playlist(lib, list_name, out_filename, replace_this = None, with_this
 
     _, ext = os.path.splitext(out_filename)
 
-    if ext.lower() == '.m3u8':
+    if ext.lower() in ['.m3u', '.m3u8']:
         out_file = open(out_filename, "w", encoding="utf-8")
         out_file.write("#EXTM3U\n")
         out_file.write("# Written by efit on %s\n" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
