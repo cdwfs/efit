@@ -1,0 +1,1 @@
+python playlist.py -L %1 Bedtime Chiptunes Christmas Definitive Demoscene "For The Ladies" "Girls Top 10" Homemade La LM Longform Potatoes "Proving Ground" Repertoie Show Sleepy Trance "Video Game Music" Zenith
