@@ -102,7 +102,7 @@ def export_playlist(lib, list_name, out_filename, replace_this = None, with_this
                 print("Skipping %s: no such file" % song.location)
                 continue
             file_num += 1
-            if replace_this and with_this:
+            if (replace_this != None) and (with_this != None):
                 song_path = re.sub(replace_this, with_this, song_path, count=1, flags=re.IGNORECASE)
             out_file.write("%s\n" % song_path)
         out_file.close()

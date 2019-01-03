@@ -26,5 +26,5 @@ if __name__ == "__main__":
             if not playlist_name in lib.getPlaylistNames():
                 print("Skipping '%s' (no such playlist in library)" % playlist_name)
                 continue
-            efit.export_playlist(lib, playlist_name, playlist_name+".m3u")
+            efit.export_playlist(lib, playlist_name, playlist_name+".m3u", replace_this=r"D:\\Dropbox\\Music\\", with_this=r".\\")
 
