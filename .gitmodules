@@ -1,0 +1,6 @@
+[submodule "third_party/eyeD3"]
+	path = third_party/eyeD3
+	url = https://github.com/nicfit/eyeD3
+[submodule "third_party/libpytunes"]
+	path = third_party/libpytunes
+	url = https://github.com/liamks/libpytunes
