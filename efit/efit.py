@@ -19,7 +19,7 @@ def load_library_from_file(filename):
         lib = libpytunes.Library(filename)
     elif ext == ".bz2":
         with bz2.open(filename) as fbz2:
-          lib = libpytunes.Library(fbz2)
+            lib = libpytunes.Library(fbz2)
     elif ext == ".pkl":
         lib_file = open(filename, "rb")
         lib = pickle.load(lib_file)
