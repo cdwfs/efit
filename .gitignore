@@ -1,1 +1,4 @@
 *.pyc
+*.m3u
+*.xml.bz2
+*.xml.pkl
