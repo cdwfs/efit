@@ -16,7 +16,8 @@ def load_library_from_file(filename):
     """Loads an iTunes library from either an XML file (exported from iTunes) or a pickled .pkl file."""
     base, ext = os.path.splitext(filename)
     if ext == ".xml":
-        lib = libpytunes.Library(filename)
+        with open(filename, 'rb') as fp:
+            lib = libpytunes.Library(fp)
     elif ext == ".bz2":
         with bz2.open(filename) as fbz2:
             lib = libpytunes.Library(fbz2)
