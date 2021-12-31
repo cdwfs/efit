@@ -45,6 +45,6 @@ if __name__ == "__main__":
             itunes_stars = get_itunes_star_rating(song)
             popm_stars = get_popm_rating(song_path)
             if itunes_stars != popm_stars:
-                print(f"\r{song.name}: {popm_stars} -> {itunes_stars} stars")
+                print(f"\r{' '*32}\r{song.name}: {popm_stars} -> {itunes_stars} stars")
                 set_popm_rating(song_path, itunes_stars)
         print(f"\r{i_song:6}/{song_count:6} songs processed", end="")
