@@ -8,7 +8,7 @@ Use cases important to me:
 
 - **[DONE]** Load an exported iTunes library XML file.
 - **[DONE]** Convert library to a more compact, easier-to-load format (pickle, most likely).
-- Copy star ratings from iTunes library (stored as library-level metadata) to ID3v2.
+- **[DONE]** Copy star ratings from iTunes library (stored as library-level metadata) to ID3v2.
   POPM tags (stored per-file).
 - **[DONE]** Export existing iTunes playlists to a standard format.
   Must support UTF8 filenames. ([.M3U8](https://en.wikipedia.org/wiki/M3U)?)
