@@ -12,10 +12,10 @@ Use cases important to me:
   POPM tags (stored per-file).
 - **[DONE]** Export existing iTunes playlists to a standard format.
   Must support UTF8 filenames. ([.M3U8](https://en.wikipedia.org/wiki/M3U)?)
-
+- **[DONE]** Scan & report mismatches between iTunes library ratings and ID3 ratings.
+- Support tagging AAC files
 - Limited "smart playlist" generation (create and export new playlists.
   directly from the library, like "everything by Pink Floyd").
-- Scan & report mismatches between iTunes library ratings and ID3 ratings.
 - Long-term, maybe just ditch the iTunes baggage entirely and develop a custom
   library format.
 
