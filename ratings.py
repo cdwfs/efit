@@ -42,6 +42,8 @@ if __name__ == "__main__":
         i_song += 1
         if efit.is_valid_song(song):
             song_path = efit.get_song_path(song)
+            if song_path[-4:].lower() == ".m4a":
+                continue # Creating ID3 tags from AAC files doesn't seem to work
             itunes_stars = get_itunes_star_rating(song)
             popm_stars = get_popm_rating(song_path)
             if itunes_stars != popm_stars:
