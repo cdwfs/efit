@@ -78,7 +78,7 @@ the directory(s) passed in the "roots" list. If it still can't be found anywhere
             if os.path.isfile(candidate):
                 return candidate
     # Give up!
-    return None
+    raise ValueError(f"Could not find path for song location '{song.location}'")
 
 def export_playlist(lib, list_name, out_filename, replace_this = None, with_this = None):
     """Exports a pre-existing playlist from the library in the standard .m3u8 format."""
