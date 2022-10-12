@@ -83,13 +83,17 @@ if __name__ == "__main__":
     for _,song in lib.songs.items():
         i_song += 1
         if efit.is_valid_song(song):
-            song_path = efit.get_song_path(song)
             try:
+                song_path = efit.get_song_path(song)
                 if not os.path.isfile(song_path):
-                    print(f"\r{' '*32}\r{song.name}: file not found")
+                    print(f"\r{' '*32}\r{song.location}: file not found")
                     continue
             except TypeError:
-                print(f"\npath error for {song}")
+                print(f"\r{' '*32}\rpath error for {song.location}")
+                continue
+            except ValueError:
+                print(f"\r{' '*32}\rpath error for {song.location}")
+                continue
             itunes_stars = get_itunes_star_rating(song)
             suffix = song_path[-4:].lower()
             if suffix == ".mp3":
