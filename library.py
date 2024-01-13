@@ -12,5 +12,5 @@ if __name__ == "__main__":
     lib = efit.load_library_from_file(lib_filename)
 
     for id, song in lib.songs.items():
-        if song.location != None and os.path.exists(song.location) == False:
-            print("Song {s} at location {loc} does not exist".format(s=song.name, loc=song.location_escaped))
+        if efit.is_valid_song(song) and os.path.exists(song.location) == False:
+            print(f"Song {song.name} at location {song.location_escaped} does not exist")
